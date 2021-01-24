@@ -10,11 +10,13 @@
   "bugs": "https://github.com/stardust-configs/json-schema-validator/issues",
   "license": "MIT",
   "author": "P-Chan",
-  "main": "index.js",
-  "bin": "cli.js",
+  "main": "./dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/stardust-configs/json-schema-validator.git"
+  },
+  "scripts": {
+    "build": "tsc"
   },
   "dependencies": {
     "ajv": "^7.0.3",
@@ -26,6 +28,10 @@
   },
   "devDependencies": {
     "@stardust-configs/prettier-config": "^0.1.1",
-    "prettier": "^2.2.1"
+    "@stardust-configs/tsconfig": "^0.1.0",
+    "@types/node": "^14.14.22",
+    "@types/node-fetch": "^2.5.8",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3"
   }
 }

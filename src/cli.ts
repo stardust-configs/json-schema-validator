@@ -1,6 +1,7 @@
-const { version } = require('./package')
-const cli = require('cac')()
-const validate = require('./validate')
+import { cac } from 'cac'
+import { validate } from './validate'
+
+const cli = cac()
 
 cli
   .command('[...src]', 'Validate files')
@@ -21,7 +22,7 @@ cli
     })
   })
 
-cli.version(version)
+cli.version('0.1.0')
 cli.help()
 
 cli.parse()
