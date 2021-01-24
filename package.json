@@ -1,0 +1,31 @@
+{
+  "name": "@stardust-configs/json-schema-validator",
+  "version": "0.1.0",
+  "description": "JSON Schema validator",
+  "keywords": [
+    "json-schema",
+    "json-schema-validator"
+  ],
+  "homepage": "https://github.com/stardust-configs/json-schema-validator#readme",
+  "bugs": "https://github.com/stardust-configs/json-schema-validator/issues",
+  "license": "MIT",
+  "author": "P-Chan",
+  "main": "index.js",
+  "bin": "cli.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stardust-configs/json-schema-validator.git"
+  },
+  "dependencies": {
+    "ajv": "^7.0.3",
+    "cac": "^6.7.1",
+    "consola": "^2.15.0",
+    "globby": "^11.0.2",
+    "json-schema-migrate": "^1.0.0",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "@stardust-configs/prettier-config": "^0.1.1",
+    "prettier": "^2.2.1"
+  }
+}
