@@ -31,7 +31,7 @@ export const validate = async ({ strict = true, src, schema }: ValidateArgument)
 
     draft7(schemaData)
 
-    const ajv = new Ajv({ strict })
+    const ajv = new Ajv({ strict, logger: false })
     const validate = ajv.compile(schemaData)
 
     await Promise.all(
