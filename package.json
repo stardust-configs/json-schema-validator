@@ -24,7 +24,9 @@
     "url": "https://github.com/stardust-configs/json-schema-validator.git"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "clean": "rimraf ./dist",
+    "prebuild": "npm run clean"
   },
   "dependencies": {
     "ajv": "^7.0.3",
@@ -40,6 +42,7 @@
     "@types/node": "^14.14.22",
     "@types/node-fetch": "^2.5.8",
     "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
     "typescript": "^4.1.3"
   }
 }
