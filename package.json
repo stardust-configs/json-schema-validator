@@ -11,13 +11,14 @@
   "license": "MIT",
   "author": "P-Chan",
   "main": "./dist/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/stardust-configs/json-schema-validator.git"
-  },
+  "types": "./dist/index.d.ts",
   "bin": {
     "json-schema-validator": "./dist/cli",
     "jsv": "./dist/cli"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stardust-configs/json-schema-validator.git"
   },
   "scripts": {
     "build": "tsc"
