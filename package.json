@@ -26,7 +26,7 @@
   "scripts": {
     "build": "tsc",
     "clean": "rimraf ./dist",
-    "prebuild": "npm run clean"
+    "prebuild": "npm run clean && node dump-version"
   },
   "dependencies": {
     "ajv": "^7.0.3",

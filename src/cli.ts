@@ -1,5 +1,6 @@
 import { cac } from 'cac'
 import { validate } from './validate'
+import { version } from './version'
 import consola from 'consola'
 
 const cli = cac()
@@ -34,7 +35,7 @@ cli
     }
   })
 
-cli.version('0.1.0')
+cli.version(version)
 cli.help()
 
 cli.parse()
