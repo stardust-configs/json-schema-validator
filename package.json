@@ -15,6 +15,10 @@
     "type": "git",
     "url": "https://github.com/stardust-configs/json-schema-validator.git"
   },
+  "bin": {
+    "json-schema-validator": "./dist/cli",
+    "jsv": "./dist/cli"
+  },
   "scripts": {
     "build": "tsc"
   },
