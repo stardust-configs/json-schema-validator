@@ -1,9 +1,9 @@
+import { draft7 } from 'json-schema-migrate'
 import Ajv from 'ajv'
 import consola from 'consola'
 import fetch from 'node-fetch'
 import fs from 'fs'
 import globby from 'globby'
-import migrate from 'json-schema-migrate'
 import path from 'path'
 
 export type ValidateArgument = {
@@ -29,7 +29,7 @@ export const validate = async ({ strict = true, src, schema }: ValidateArgument)
       return data.json()
     })
 
-    migrate.draft7(schemaData)
+    draft7(schemaData)
 
     const ajv = new Ajv({ strict })
     const validate = ajv.compile(schemaData)
