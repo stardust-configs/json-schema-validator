@@ -31,6 +31,8 @@ cli
         strict: options.strict,
         src,
         schema: options.schema,
+      }).catch(() => {
+        return process.exit(1)
       })
     } catch (error) {
       consola.error(error)

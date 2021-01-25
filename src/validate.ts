@@ -54,6 +54,6 @@ export const validate = async ({ strict = true, src, schema }: ValidateArgument)
   } catch (error) {
     consola.error(error)
 
-    return process.exit(1)
+    throw new Error(error)
   }
 }
