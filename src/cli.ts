@@ -8,6 +8,7 @@ const cli = cac()
 cli
   .command('[...src]', 'Validate files')
   .option('-s, --schema [url]', 'Remote JSON Schema URL')
+  .option('--no-strict', 'Disable strict mode')
   .example((name) => {
     return `${name} "package.json" -s "https://json.schemastore.org/package"`
   })
@@ -27,7 +28,8 @@ cli
       }
 
       await validate({
-        src: src,
+        strict: options.strict,
+        src,
         schema: options.schema,
       })
     } catch (error) {
