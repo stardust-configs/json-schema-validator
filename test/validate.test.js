@@ -36,16 +36,7 @@ test('glob multiple src (contain invalid)', async () => {
   ).rejects.toThrow()
 })
 
-test('src is no exist', async () => {
-  await expect(
-    validate({
-      src: ['./examples/tsconfig.es2077.json'],
-      schema: 'https://json.schemastore.org/tsconfig',
-    })
-  ).rejects.toThrow()
-})
-
-test('schema is no exist', async () => {
+test('schema does not exist', async () => {
   await expect(
     validate({
       src: ['./examples/tsconfig.es2020.json'],
