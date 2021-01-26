@@ -27,7 +27,9 @@
     "build": "tsc",
     "clean": "rimraf ./dist",
     "test": "jest",
-    "version": "standard-version",
+    "version:major": "standard-version -r major",
+    "version:minor": "standard-version -r minor",
+    "version:patch": "standard-version -r patch",
     "release": "dotenv -- conventional-github-releaser -p angular",
     "prebuild": "npm run clean"
   },
