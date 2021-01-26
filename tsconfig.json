@@ -4,5 +4,6 @@
     "declaration": true,
     "outDir": "./dist",
     "baseUrl": "./"
-  }
+  },
+  "include": ["./src"]
 }
