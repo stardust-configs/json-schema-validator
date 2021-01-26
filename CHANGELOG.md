@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/stardust-configs/json-schema-validator/compare/v0.1.0...v0.1.1) (2021-01-26)
+
+
+### Bug Fixes
+
+* Fix bin field ([7381b06](https://github.com/stardust-configs/json-schema-validator/commit/7381b06644b6df7b7e85de97b272f0f0b2d794e0))
+
 ## 0.1.0 (2021-01-26)
 
 
