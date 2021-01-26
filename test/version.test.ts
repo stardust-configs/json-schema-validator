@@ -1,5 +1,5 @@
 const packageJson = require('../package')
-const { version } = require('../dist/version')
+import { version } from '../dist/version'
 
 test('version', () => {
   expect(version).toEqual(packageJson.version)

@@ -1,4 +1,4 @@
-const { validate } = require('../dist/validate')
+import { validate } from '../src/validate'
 
 test('valid', async () => {
   const result = await validate({
