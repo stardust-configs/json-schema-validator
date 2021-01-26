@@ -2,6 +2,11 @@
 
 > JSON Schema validator
 
+- Support for using CLI and module
+- Support for multiple sources
+- Support for Glob Pattern sources
+- Support for local and remote JSON Schema
+
 ## Install
 
 ```bash
