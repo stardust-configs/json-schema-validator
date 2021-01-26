@@ -29,7 +29,8 @@
     "test": "jest",
     "version": "standard-version",
     "release": "dotenv -- conventional-github-releaser -p angular",
-    "prebuild": "npm run clean && node dump-version"
+    "prebuild": "npm run clean && node dump-version",
+    "postversion": "node dump-version"
   },
   "dependencies": {
     "ajv": "^7.0.3",
