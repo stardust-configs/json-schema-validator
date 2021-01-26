@@ -1,6 +1,6 @@
 {
   "name": "@stardust-configs/json-schema-validator",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "JSON Schema validator",
   "keywords": [
     "json-schema",
