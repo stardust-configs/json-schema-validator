@@ -1,1 +1,3 @@
-export const version = '0.1.2'
+const packageJson = require('../package.json')
+
+export const version = packageJson.version
