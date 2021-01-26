@@ -1,59 +1,43 @@
-import { draft7 } from 'json-schema-migrate'
-import Ajv from 'ajv'
 import consola from 'consola'
-import fetch from 'node-fetch'
 import fs from 'fs'
 import globby from 'globby'
 import path from 'path'
 
+import { createValidator, ValidatorArgument } from './validator'
+
 export type ValidateArgument = {
-  // Strict mode
-  strict?: boolean
   // Validate JSON path
   src: string | string[]
-  // Remove JSON Schema URL
-  schema: string
-}
+} & ValidatorArgument
 
 export const validate = async ({ strict = true, src, schema }: ValidateArgument) => {
-  try {
-    const currentWorkDirectory = process.cwd()
+  const cwd = process.cwd()
 
-    const srcFileNames = await globby(src, {
+  try {
+    const srcPaths = await globby(src, {
       gitignore: true,
     })
 
-    const schemaData = await fetch(schema).then((data) => {
-      consola.success('Download schema file')
-
-      return data.json()
-    })
-
-    draft7(schemaData)
-
-    const ajv = new Ajv({ strict, logger: false })
-    const validate = ajv.compile(schemaData)
+    const validator = await createValidator({ strict, schema })
 
     await Promise.all(
-      srcFileNames.map(async (srcFileName) => {
-        const srcFilePath = path.resolve(currentWorkDirectory, srcFileName)
+      srcPaths.map(async (srcPath) => {
+        const srcFullPath = path.resolve(cwd, srcPath)
 
-        const src = await fs.promises.readFile(srcFilePath, 'utf-8').then((data) => {
-          return JSON.parse(data)
+        const srcData = await fs.promises.readFile(srcFullPath, 'utf-8').then((data) => {
+          return JSON.parse(data) as JSONObject
         })
 
-        const valid = validate(src)
+        const isValid = validator(srcData)
 
-        if (valid) {
-          consola.success(`${srcFileName} is valid`)
+        if (isValid) {
+          consola.success(`${srcPath} is valid`)
         } else {
-          throw new Error(`${srcFileName} is invalid`)
+          throw new Error(`${srcPath} is invalid`)
         }
       })
     )
   } catch (error) {
-    consola.error(error)
-
     throw new Error(error)
   }
 }
