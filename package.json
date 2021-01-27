@@ -31,7 +31,8 @@
     "version:minor": "standard-version -r minor",
     "version:patch": "standard-version -r patch",
     "release": "dotenv -- conventional-github-releaser -p angular",
-    "prebuild": "npm run clean"
+    "prebuild": "npm run clean",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "ajv": "^7.0.3",
