@@ -10,7 +10,7 @@ export type ValidateArgument = {
   src: string | string[]
 } & ValidatorArgument
 
-export const validate = async ({ strict = true, src, schema }: ValidateArgument) => {
+export const validate = async ({ strict = false, src, schema }: ValidateArgument) => {
   const cwd = process.cwd()
 
   try {
