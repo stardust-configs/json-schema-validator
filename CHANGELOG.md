@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/stardust-configs/json-schema-validator/compare/v0.2.0...v0.3.0) (2021-04-06)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ajv to v8 ([61a704c](https://github.com/stardust-configs/json-schema-validator/commit/61a704ca6bb63699818dd8fb094a846438f22951))
+* **deps:** update dependency json-schema-migrate to v2 ([c2ecc61](https://github.com/stardust-configs/json-schema-validator/commit/c2ecc61d991453c26f766b8f1ac3f1662e393793))
+* disable strict mode ([73c2d75](https://github.com/stardust-configs/json-schema-validator/commit/73c2d75907c43840b08063a99b0f86dff991249d))
+
 ## [0.2.0](https://github.com/stardust-configs/json-schema-validator/compare/v0.1.2...v0.2.0) (2021-01-26)
 
 
