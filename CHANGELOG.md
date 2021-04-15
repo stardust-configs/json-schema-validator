@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/stardust-configs/json-schema-validator/compare/v0.3.0...v0.4.0) (2021-04-15)
+
+
+### Features
+
+* change module interface ([8c04cb2](https://github.com/stardust-configs/json-schema-validator/commit/8c04cb20af6cdb4d895c49bb4e4bd30ef63e2aa4))
+
+
+### Bug Fixes
+
+* change no strict flag to strict flag in cli ([9de86a4](https://github.com/stardust-configs/json-schema-validator/commit/9de86a45d8e3d6dece9aeeac48c21fcc4a810721)), closes [#34](https://github.com/stardust-configs/json-schema-validator/issues/34)
+
 ## [0.3.0](https://github.com/stardust-configs/json-schema-validator/compare/v0.2.0...v0.3.0) (2021-04-06)
 
 
