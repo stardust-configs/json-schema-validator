@@ -1,19 +1,24 @@
 import fetch from 'node-fetch'
 import fs from 'fs'
 import path from 'path'
+import rimraf from 'rimraf'
 
 import jsv from '../src'
 
-beforeAll(async () => {
-  const cwd = process.cwd()
+const exampleSchemaFileFullPath = path.resolve(process.cwd(), './examples/tsconfig.schema.json')
 
+beforeAll(async () => {
   const schema = await fetch('https://json.schemastore.org/tsconfig').then(async (data) => {
     return await data.json()
   })
 
-  const schemaFullPath = path.resolve(cwd, './examples/tsconfig.schema.json')
+  await fs.promises.writeFile(exampleSchemaFileFullPath, JSON.stringify(schema), { encoding: 'utf-8' })
 
-  await fs.promises.writeFile(schemaFullPath, JSON.stringify(schema), { encoding: 'utf-8' })
+  return
+})
+
+afterAll(async () => {
+  rimraf(exampleSchemaFileFullPath, () => {})
 
   return
 })
