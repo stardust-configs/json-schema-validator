@@ -1,19 +1,10 @@
-import { draft7 } from 'json-schema-migrate'
 import { URL } from 'url'
-import Ajv from 'ajv'
 import consola from 'consola'
 import fetch from 'node-fetch'
 import fs from 'fs'
 import path from 'path'
 
-export type ValidatorArgument = {
-  // Strict mode
-  strict?: boolean
-  // Remove JSON Schema URL
-  schema: string
-}
-
-const isURL = (url: string) => {
+const isRemote = (url: string) => {
   try {
     const protocol = new URL(url).protocol
 
@@ -56,12 +47,6 @@ const fetchRemoteSchema = async (schemaURL: string) => {
     })
 }
 
-export const createValidator = async ({ strict, schema }: ValidatorArgument) => {
-  const schemaData = isURL(schema) ? await fetchRemoteSchema(schema) : await readLocalSchema(schema)
-
-  draft7(schemaData)
-
-  const ajv = new Ajv({ strict, logger: false })
-
-  return ajv.compile(schemaData)
+export const getSchemaFromURL = async (schemaURL: string) => {
+  return isRemote(schemaURL) ? await fetchRemoteSchema(schemaURL) : await readLocalSchema(schemaURL)
 }
