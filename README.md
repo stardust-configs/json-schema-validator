@@ -39,7 +39,7 @@ $ jsv "tsconfig.*.json" --schema "https://json.schemastore.org/tsconfig"
 $ jsv "tsconfig.node.json" "tsconfig.jest.json" --schema "https://json.schemastore.org/tsconfig"
 
 # no strict
-$ jsv "tsconfig.json" --schema "https://json.schemastore.org/tsconfig" --no-strict
+$ jsv "tsconfig.json" --schema "https://json.schemastore.org/tsconfig" --strict
 ```
 
 ## Author
