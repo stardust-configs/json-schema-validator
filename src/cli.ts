@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 import { cac } from 'cac'
-import { validate } from './validate'
+
 import { version } from './version'
-import consola from 'consola'
+import jsv from './index'
 
 const cli = cac()
 
@@ -29,14 +29,16 @@ cli
         throw new Error('schema option is string only')
       }
 
-      await validate({
+      const isValid = await jsv({
+        srcFilePath: src,
+        schemaFileURL: options.schema,
         strict: options.strict,
-        src,
-        schema: options.schema,
       })
-    } catch (error) {
-      consola.error(error)
 
+      if (!isValid) return process.exit(1)
+
+      return process.exit(0)
+    } catch (error) {
       return process.exit(1)
     }
   })
