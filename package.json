@@ -53,7 +53,7 @@
     "@types/jest": "26.0.24",
     "@types/node": "14.17.14",
     "@types/node-fetch": "2.5.12",
-    "@types/rimraf": "3.0.1",
+    "@types/rimraf": "3.0.2",
     "babel-jest": "27.0.6",
     "husky": "6.0.0",
     "jest": "27.0.6",
